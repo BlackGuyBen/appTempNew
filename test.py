@@ -13,7 +13,7 @@ class TestHello(unittest.TestCase):
         
     def test_temp10(self):
         val = self.app.get('temps')
-        self.assertEqual(val.count(), '10')
+        self.assertEqual(count(val), '10')
 
     def test_recent_temps(self):
         tv = self.app.get('/recent_temps')
