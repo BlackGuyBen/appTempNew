@@ -7,12 +7,12 @@ pipeline {
   stages {
    stage('build') {
     steps {
-      sh 'pip3 install --no-cache-dir -r requirements.txt' 
+      sh 'pip3 install --no-cache-dir -r /flaskapi/requirements.txt' 
    }
   }
   stage('test') {
    steps {
-     sh 'python3 test.py'
+     sh 'python3 /flaskapi/test.py'
     } 
    }
   }
