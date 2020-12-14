@@ -1,7 +1,9 @@
 //pipeline
 pipeline {
-  agent { docker { image 'python:latest' 
-                   args '--user 0:0'}}
+  agent { dockerfile { filename 'Dockerfile'
+                      dir '/home/jdservice/flaskapi'
+                     }
+        }
   stages {
    stage('build') {
     steps {
