@@ -13,7 +13,6 @@ class TestHello(unittest.TestCase):
 	        rv = self.app.get('/')
        		self.assertEqual(rv.status, '200 OK')
 
- 	#add two more tests please
 	def test_temp10(self):
 		val = self.app.get('/get_ten_temps_api')
 		self.assertEqual(val.status, '200 OK')
