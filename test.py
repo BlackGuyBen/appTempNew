@@ -12,12 +12,12 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         
     def test_temp10(self):
-        val = self.app.get('/get_ten_temps_api')
-        self.assertEqual(val.status, '200 OK')
+        val = self.app.get('temps')
+        self.assertEqual(val.count(), '10')
 
     def test_recent_temps(self):
         tv = self.app.get('/recent_temps')
         self.assertEqual(tv.status, '200 OK')
-        
+
 if __name__ == '__main__':
     unittest.main()
