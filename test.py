@@ -13,7 +13,7 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         
     def test_temp10(self):
-        self.assertCountEqual(self.temp10(), self.expected)
+        self.assertCountEqual(app.temp10(), self.expected)
         
     def test_recent_temps(self):
         tv = self.app.get('/recent_temps')
