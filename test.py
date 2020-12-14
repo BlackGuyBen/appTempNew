@@ -12,9 +12,10 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         
     def test_temp10(self):
-        val = '10'
-        self.assertEqual(val, '10')
-
+        temps = app.app.temp10()
+        val = len(temps)
+        self.assertEqual(val, 10)
+        
     def test_recent_temps(self):
         tv = self.app.get('/recent_temps')
         self.assertEqual(tv.status, '200 OK')
