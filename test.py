@@ -4,7 +4,7 @@ import app
 
 class TestHello(unittest.TestCase):
 
-    def setUp(self):
+   def setUp(self):
         app.app.testing = True
         self.app = app.app.test_client()
 
@@ -13,12 +13,12 @@ class TestHello(unittest.TestCase):
         self.assertEqual(rv.status, '200 OK')
         
     def test_temp10(self):
-		val = self.app.get('/get_ten_temps_api')
-		self.assertEqual(val.status, '200 OK')
-
-	def test_recent_temps(self):
-		tv = self.app.get('/recent_temps')
-		self.assertEqual(tv.status, '200 OK')
+	val = self.app.get('/get_ten_temps_api')
+	self.assertEqual(val.status, '200 OK')
+	
+    def test_recent_temps(self):
+	tv = self.app.get('/recent_temps')
+	self.assertEqual(tv.status, '200 OK')
 
     #add two more tests please
 
